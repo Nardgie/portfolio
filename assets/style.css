@@ -1,7 +1,10 @@
 :root{
-    --faded-orange: #e56e39;
+    /* --faded-orange: #e56e39;
     --gin: #e8e8e8;
-    --sky: #39b0e5;
+    --sky: #39b0e5; */
+    --white-rock: #EFE9DB;
+    --brandy: #DFBCA0;
+    --clam: #c7877f;
 }
 
 * {
@@ -14,15 +17,15 @@ html {
 }
 
 body {
-    background-color: #d4dae3;
-    color: #333;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background: url("./bg-marbleSpash.png") transparent;
+    background-size: cover;
+    background-position: center;
+    font-family: "Montserrat", sans-serif;
     font-size: 14px;
     line-height: 1.42857;
 }
 
 main {
-    /* padding-top: 90px; */
     max-width: 96%;
     margin: 2rem 1rem 2rem auto;
     margin-right: 0px;
@@ -37,11 +40,8 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--faded-orange);
-    color: var(--gin);
+    background-color: var(--brandy);
     padding: 20px 5px;
-    position: fixed;
-    z-index: 1000;
     width: 100%;
 }
 
@@ -51,6 +51,7 @@ header h1 {
     text-align: center;
     padding-bottom: 1rem;
     margin-left: 15px;
+    letter-spacing: 2px;
 }
 
 /* HEADER AND CONTACT LINKS  */
@@ -63,13 +64,17 @@ header ul li, .contact-container ul li {
 }
 
 header ul li a {
-    color: var(--gin);
-    text-decoration: wavy;
+    color: var(--clam);
+    background-color: var(--white-rock);
+    border-radius: 7px;
+    font-weight: 700;
+    padding: 5px 10px;
+    letter-spacing: 2px;
 }
 
 header h1 a {
-    background: var(--sky);
-    color: var(--gin);
+    background: var(--white-rock);
+    color: var(--clam);
     text-decoration: none;
     padding: 10px 20px;
     border-radius: 8px;
@@ -77,12 +82,30 @@ header h1 a {
 
 /* HERO IMAGE SECTION */
 .hero {
-    height: 400px;
+    height: 350px;
     width: 100%;
+    padding: 2rem;
     margin-bottom: 25px;
-    background-image: url("./hero-sample.jpeg");
+    background-image: url("./bg-marbleSwirl.png");
     background-size: cover;
     background-position: center;
+    border-bottom: 3px solid var(--clam);
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    background-color: var(--clam);
+    color: var(--white-rock);
+    padding: 1rem;
+    margin: 0px;
+    width: 20%;
+    position: absolute;
+    right: 30px;
+    bottom: 15px;
+    border-radius: 0px 25px;
 }
 
 /* ENTIRE CONTENT SECTION; CONTAINER FOR EVERYTHING NOT FOOTER */
@@ -103,8 +126,6 @@ header h1 a {
     justify-content: flex-start;
     flex-wrap: wrap;
     padding: 3rem;
-    /* margin-right: -1.5rem;
-    margin-left: -1.5rem; */
     width: 100%;
     margin-bottom: 2rem;
 }
@@ -117,7 +138,7 @@ header h1 a {
     text-align: right;
     padding: 1.5rem;
     margin: 0px 15px;
-    border-right: 4px solid var(--faded-orange);
+    border-right: 4px solid var(--clam);
 }
 
 /* ABOUT ME SECTION */
@@ -129,7 +150,9 @@ article {
 
 
 #about-me article p {
-    font-size: 1.4rem;
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: 1.5;
     padding-left: 10px;
     text-align: start;
     text-decoration: none;
@@ -141,115 +164,90 @@ article {
 .project-card {
     margin: 5px;
     max-width: 100%;
+    position: relative;
+    display: block;
+    border-radius: 10px;
+    border: 6px solid var(--brandy);
+    margin: 5px;
 }
 
 .project-header {
-    background-color: var(--sky);
-    color: var(--faded-orange);
-    font-size: 1.7rem;
-    font-weight: bold;
-    max-width: 45%;
-    padding: 10px 10px;
-    /* box-shadow: 8px 8px 8px var(--faded-orange); */
+    background-color: var(--clam);
+    color: var(--white-rock);
+    max-width: 65%;
+    padding: 1.5%;
+    text-align: left;
+    box-sizing: border-box;
 }
 
 .project-header {
     position: absolute;
-    bottom: 20px;
-    left: 13px;
+    font-variant:small-caps;
+    font-weight: 350;
+    font-size: 90%;
+    bottom: 15%;
+    left: 0;
+}
+
+.project-header::first-line {
+    font-size: 220%;
+    font-weight: 600;
 }
 
 .project-card img {
-    max-width: 90%;
+    width: 100%;
     height: auto;
-    border-radius: 10px;
-    border: 6px solid var(--sky);
-    margin: 5px;
 }
 
 .project-card img:hover {
-    box-shadow: 5px 5px 5px var(--faded-orange);
+    box-shadow: 5px 5px 5px var(--white-rock);
     opacity: 0.5;
 }
 
-/* .figure-flex:before,
-.figure-flex:after {
-    content: "";
-    display: table;
-}
-
-.figure-flex:after {
-    clear: both;
-}
-
-.figure-flex {
-    clear: both;
-    zoom: 1;
-} */
-
-/* .figure-flex {
-    display: flex;
-    flex-direction: row;
-    padding: 0;
-
-} */
 
 /* WORK + CONTACT ME SECTION */
-/* #work,
-#contact-me, #resume {
-    display: inline-flex;
-    justify-content: flex-start;
-} */
-
-/* #work, #contact-me, #resume {
-    display: inline-flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    flex-wrap: wrap;
-} */
 
 #work .figure-flex {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    /* white-space: pre-wrap; */
-    /* align-items: flex-start; */
     gap: 5px;
-    max-width: 65%;
-    margin: 0px auto;
+    max-width: 69%;
+    padding-left: 10px;
+    margin: 10px auto;
 }
 
 
-#work .figure-flex .project-card {
-    flex: 1 0 47%;
-    max-width: 47%;
+#work .figure-flex .project-card:not(.card1) {
+    flex: 0 0 49%;
     margin: 20px 0;
 }
 
-#work .project-card:first-child {
-    /* flex: 0 0 calc(100% - 200px - 40px); */
-    /* max-width: calc(100% - 200px - 40px); */
-    flex: 0 0 100%;
-    max-width: 100%;
-    margin: 20px 0px;
+#work .figure-flex .card1 {
+    flex: 0 0 99%;
+    max-width: 98%;
 }
 
 
 .contact-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
-    width: 70%;
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .contact-container ul li a{
-    color: var(--faded-orange);
-    font-weight: 300;
-    font-size: 2rem;
+    background-color: var(--clam);
+    color: var(--white-rock);
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
     margin-right: 10px;
-    padding: 0px;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 
@@ -260,7 +258,8 @@ footer {
     margin: 2rem auto;
     font-size: 2.5rem;
     font-weight: bold;
-    background-color: var(--faded-orange);
+    background-color: var(--brandy);
+    color: var(--white-rock);
     width: 100%;
     padding: 1.5rem;
 }
@@ -279,3 +278,336 @@ footer {
     margin-left: 15px;
     height: 200px;
 } */
+
+/* media queries to make responsive */
+@media screen and (max-width: 480px) {
+    main {
+        margin: 0px;
+        max-width: 100%;
+    }
+    
+    body {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    header ul li {
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .hero {
+        height: 250px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+        width: 30%;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-header {
+        flex: 0 0 100%;
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 0px 5px;
+        border-right: none; 
+    }
+
+    .section-container {
+        padding: 1rem;
+    }
+
+    article {
+        display: block;
+        
+    }
+
+    #about-me article p {
+        text-align: center;
+        padding: 0px;
+    }
+
+    .project-header {
+        font-size: 1rem;
+
+    }
+
+    .project-card img {
+        max-width: 100%;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .contact-container ul li a {
+        font-size: 1rem;
+        margin: 20px;
+        flex: 0 0 33%;
+    }
+
+    footer {
+        font-size: 2rem;
+    }
+}
+
+
+
+
+
+@media (min-width: 481px) and (max-width: 768px) {
+    main {
+        margin: 0px;
+        max-width: 100%;
+    }
+    
+    body {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    header ul li {
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .hero {
+        height: 250px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+        width: 30%;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-header {
+        flex: 0 0 100%;
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 0px 5px;
+        border-right: none; 
+    }
+
+    .section-container {
+        padding: 1rem;
+    }
+
+    article {
+        display: block;
+        
+    }
+
+    #about-me article p {
+        text-align: center;
+        padding: 0px;
+    }
+
+    .project-header {
+        font-size: 1rem;
+
+    }
+
+    .project-card img {
+        max-width: 100%;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contact-container ul li a {
+        font-size: 1rem;
+        margin: 20px;
+        flex: 0 0 33%;
+    }
+
+    footer {
+        font-size: 2rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    main {
+        margin: 0px;
+        max-width: 100%;
+    }
+    
+    body {
+        width: 100%;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    header ul li {
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    .hero {
+        height: 250px;
+    }
+
+    .hero h2 {
+        font-size: 1.5rem;
+        width: 30%;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .flex-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .section-header {
+        flex: 0 0 100%;
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 0px 5px;
+        border-right: none;
+        border-bottom: 2px solid var(--clam); 
+    }
+
+    .section-container {
+        padding: 1rem;
+    }
+
+    article {
+        display: block;
+        
+    }
+
+    #about-me article p {
+        text-align: center;
+        padding: 0px;
+        margin-top: 20px;
+    }
+
+    #work .figure-flex {
+        margin-top: 20px;
+    }
+
+    .project-header {
+        font-size: 1rem;
+
+    }
+
+    .project-card img {
+        max-width: 100%;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .contact-container ul li {
+        margin: 20px 0px 10px 0px;
+    }
+
+    .contact-container ul li a {
+        font-size: 1rem;
+        margin: 20px;
+    }
+
+    footer {
+        font-size: 2rem;
+    }
+    
+}
+
+
+
+
+
+
+@media (min-width: 1025px) and (max-width: 1366px) {
+    #work .figure-flex  {
+        max-width: 65%;
+    }
+
+    .contact-container {
+        max-width: 65%;
+    }
+
+    .contact-container ul li {
+        margin: 10px;
+    }
+
+    .contact-container ul li a {
+        font-size: 1rem;
+    }
+    
+}
+
+
+
+
+
+@media (min-width: 1367px) {
+    
+}

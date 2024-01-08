@@ -166,8 +166,7 @@ article {
     max-width: 100%;
     position: relative;
     display: block;
-    border-radius: 10px;
-    border: 6px solid var(--brandy);
+    border: 6px solid var(--clam);
     margin: 5px;
 }
 
@@ -196,7 +195,8 @@ article {
 
 .project-card img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    object-fit: fill;
 }
 
 .project-card img:hover {
@@ -230,7 +230,7 @@ article {
 }
 
 
-.contact-container {
+.contact-container, .resume-container {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -239,7 +239,7 @@ article {
     margin: 0 auto;
 }
 
-.contact-container ul li a{
+.contact-container ul li a {
     background-color: var(--clam);
     color: var(--white-rock);
     font-weight: 600;
@@ -249,6 +249,17 @@ article {
     padding: 10px;
     border-radius: 10px;
 }
+
+.resume-container a {
+    background-color: var(--clam);
+    color: var(--white-rock);
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    font-weight: 600;
+    padding: 10px;
+    border-radius: 7px;
+}
+
 
 
 
@@ -266,29 +277,18 @@ footer {
 
 
 
-/* #about-me article p::before {
-    content: "About Me";
-    border-right: 4px solid var(--faded-orange);
-    padding-right: 10px;
-    margin-right: 20px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    text-align: right;
-    padding-bottom: 1rem;
-    margin-left: 15px;
-    height: 200px;
-} */
+
 
 /* media queries to make responsive */
-@media screen and (max-width: 480px) {
-    main {
+@media screen and (max-width: 430px) {
+    /* main {
         margin: 0px;
         max-width: 100%;
-    }
+    } */
     
-    body {
+    /* body {
         width: 100%;
-    }
+    } */
 
     header {
         flex-direction: column;
@@ -318,18 +318,20 @@ footer {
         bottom: 10px;
     }
 
-    .flex-column {
+    /* .flex-column {
         display: flex;
         flex-direction: column;
         align-items: center;
-    }
+    } */
 
     .section-header {
         flex: 0 0 100%;
         font-size: 2.5rem;
+        font-weight: 300;
         text-align: center;
         margin: 0px 5px;
-        border-right: none; 
+        border-right: none;
+        border-bottom: 2px solid var(--clam); 
     }
 
     .section-container {
@@ -346,8 +348,19 @@ footer {
         padding: 0px;
     }
 
+    #about-me article p, 
+    #work .figure-flex, 
+    .contact-container ul li,
+    .resume-container  {
+        margin-top: 20px;
+    }
+
+    .project-card {
+        border: 2px solid var(--clam);
+    }
+
     .project-header {
-        font-size: 1rem;
+        font-size: 35%;
 
     }
 
@@ -361,7 +374,7 @@ footer {
         justify-content: space-between;
     }
 
-    .contact-container ul li a {
+    .contact-container ul li a, .resume-container a {
         font-size: 1rem;
         margin: 20px;
         flex: 0 0 33%;
@@ -377,14 +390,14 @@ footer {
 
 
 @media (min-width: 481px) and (max-width: 768px) {
-    main {
+    /* main {
         margin: 0px;
         max-width: 100%;
     }
     
     body {
         width: 100%;
-    }
+    } */
 
     header {
         flex-direction: column;
@@ -443,8 +456,7 @@ footer {
     }
 
     .project-header {
-        font-size: 1rem;
-
+        font-size: 35%;
     }
 
     .project-card img {
@@ -479,30 +491,31 @@ footer {
 
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    main {
+    /* main {
         margin: 0px;
         max-width: 100%;
     }
     
     body {
         width: 100%;
-    }
+    } */
 
     header {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
         width: 100%;
     }
 
     header h1 {
         font-size: 2rem;
-        margin-bottom: 1rem;
+        margin-bottom: 0;
     }
 
     header ul li {
         font-size: 1rem;
         padding: 0;
-        margin: 0;
+        margin: 0px 10px;
     }
 
     .hero {
@@ -586,6 +599,26 @@ footer {
 
 
 @media (min-width: 1025px) and (max-width: 1366px) {
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 2rem;
+        margin-bottom: 0;
+    }
+    
+        .project-header {
+            font-size: 1rem;
+    
+        }
+    
+        .project-card img {
+            max-width: 100%;
+        }
+    
     #work .figure-flex  {
         max-width: 65%;
     }
@@ -608,6 +641,50 @@ footer {
 
 
 
-@media (min-width: 1367px) {
-    
+@media (min-width: 2881px) {
+    .section-header {
+        font-size: 5.5rem;
+        font-weight: 500;
+        border-right: 1rem solid var(--clam);   
+    }
+
+    #about-me article p {
+        font-size: 4rem;
+        padding-left: 6rem;
+    }
+
+    header h1 {
+        font-size: 4.5rem;
+        margin: 20px;
+    }
+
+    header ul li {
+        font-size: 3.5rem;
+        margin: 20px;
+    }
+
+    .hero {
+        height: 500px;
+    }
+
+    .hero h2 {
+        font-size: 4.5rem;
+        width: 15%;
+        right: 50px;
+        bottom: 50px;
+    }
+
+    .project-header {
+        font-size: 3rem;
+    }
+
+    .contact-container ul li a,
+    .resume-container a {
+        font-size: 5rem;
+    }
+
+    footer {
+        font-size: 4.5rem;
+        padding: 20px 0px;
+    }
 }
